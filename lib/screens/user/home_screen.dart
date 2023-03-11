@@ -14,6 +14,7 @@ import '../../custom_widgets/counter.dart';
 import '../../custom_widgets/green_gradient_container.dart';
 import '../../custom_widgets/home_carousel_item.dart';
 import '../../custom_widgets/home_greeetings.dart';
+import '../../custom_widgets/level_stat.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,26 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Counter(
-                  color: Color(0xffFD4B4B),
-                  value: "5",
-                  iconData: Majesticons.heart,
-                ),
-                Counter(
-                  color: Color(0xffFFFFFF),
-                  value: "5",
-                  iconData: Heroicons.scale_solid,
-                ),
-                Counter(
-                  color: Color(0xff51B6FF),
-                  value: "5",
-                  iconData: IconParkSolid.alarm_clock,
-                ),
-              ],
-            ),
+            const LevelStat(),
             const SizedBox(
               height: 30,
             ),
@@ -152,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             GreenGradientContainer(
+              onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Row(

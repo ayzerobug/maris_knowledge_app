@@ -29,7 +29,7 @@ class AppLayout extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar,
-            body: body,
+            body: SafeArea(child: body ?? const SizedBox()),
           ),
         ),
       ],

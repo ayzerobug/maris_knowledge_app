@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maris_knowledge_app/misc/constants.dart';
+import 'package:maris_knowledge_app/screens/user/play_screen.dart';
 
 import 'screens/user/home_screen.dart';
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const PlayScreen(),
     );
   }
 }

@@ -42,7 +42,8 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      const AppButton(
+                      AppButton(
+                        onTap: () {},
                         text: "Login",
                       ),
                       const SizedBox(

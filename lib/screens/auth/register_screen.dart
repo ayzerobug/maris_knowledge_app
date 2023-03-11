@@ -73,7 +73,7 @@ class RegisterScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      const AppButton(text: "Create Account")
+                      AppButton(onTap: () {}, text: "Create Account")
                     ],
                   ),
                 ),
