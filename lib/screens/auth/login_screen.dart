@@ -23,12 +23,12 @@ class LoginScreen extends StatelessWidget {
                   description: "Login to your account",
                   child: Column(
                     children: [
-                      InputField(
+                      const InputField(
                         leadingIcon: Uil.envelope_alt,
                         hintText: "Enter Email",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      InputField(
+                      const InputField(
                         leadingIcon: Ph.lock_key_bold,
                         hintText: "Enter Password",
                         keyboardType: TextInputType.emailAddress,
@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                         height: 30,
                       ),
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),

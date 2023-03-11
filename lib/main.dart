@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maris_knowledge_app/misc/constants.dart';
-import 'package:maris_knowledge_app/screens/auth/login_screen.dart';
 
-import 'screens/auth/register_screen.dart';
+import 'screens/user/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +27,8 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(
               color: AppConstants.textColor, fontWeight: FontWeight.bold),
         ),
+        appBarTheme: const AppBarTheme(color: Colors.transparent, elevation: 0),
+        iconTheme: const IconThemeData(color: Colors.white),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterScreen(),
+      home: const HomeScreen(),
     );
   }
 }

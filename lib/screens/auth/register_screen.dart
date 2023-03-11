@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/icons/ic.dart';
 import 'package:iconify_flutter/icons/mi.dart';
-import 'package:iconify_flutter/icons/mingcute.dart';
 import 'package:iconify_flutter/icons/ph.dart';
 import 'package:iconify_flutter/icons/uil.dart';
 import 'package:maris_knowledge_app/custom_widgets/input_field.dart';
@@ -26,27 +25,27 @@ class RegisterScreen extends StatelessWidget {
                   description: "Create an account",
                   child: Column(
                     children: [
-                      InputField(
+                      const InputField(
                         leadingIcon: Mi.user,
                         hintText: "Enter Full Name",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      InputField(
+                      const InputField(
                         leadingIcon: Mi.user,
                         hintText: "Enter Username",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      InputField(
+                      const InputField(
                         leadingIcon: Uil.envelope_alt,
                         hintText: "Enter Email",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      InputField(
+                      const InputField(
                         leadingIcon: Ic.round_phone,
                         hintText: "Enter Phone Number",
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      InputField(
+                      const InputField(
                         leadingIcon: Ph.lock_key_bold,
                         hintText: "Enter Password",
                         keyboardType: TextInputType.emailAddress,

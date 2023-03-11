@@ -3,7 +3,7 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ph.dart';
 
 class InputField extends StatefulWidget {
-  InputField(
+  const InputField(
       {super.key,
       this.leadingIcon,
       this.controller,
