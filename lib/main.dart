@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maris_knowledge_app/misc/constants.dart';
-import 'screens/user/referrals_screen.dart';
+import 'package:maris_knowledge_app/screens/user/refer_screen.dart';
+import 'package:maris_knowledge_app/screens/user/settings/profile_settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ReferralScreen(),
+      home: ReferScreen(),
     );
   }
 }

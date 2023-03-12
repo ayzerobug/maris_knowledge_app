@@ -8,13 +8,15 @@ class InputField extends StatefulWidget {
       this.leadingIcon,
       this.controller,
       this.keyboardType,
-      this.hintText = 'Enter text here',
+      this.hintText,
+      this.label,
       this.isPassword = false,
       this.onChange});
   final String? leadingIcon;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final String? hintText;
+  final String? label;
   final void Function(String text)? onChange;
   final bool isPassword;
 
@@ -41,58 +43,77 @@ class _InputFieldState extends State<InputField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
-      margin: const EdgeInsets.only(bottom: 15),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(
-          color: isFocused ? Colors.blue : Colors.transparent,
-          width: 2.0,
-        ),
-      ),
-      child: Row(
-        children: [
-          if (widget.leadingIcon != null)
-            Iconify(
-              widget.leadingIcon!,
-              size: 20,
-            ),
-          const SizedBox(
-            width: 10,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (widget.label != null)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.label!,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(fontSize: 14),
+              ),
+              const SizedBox(height: 5)
+            ],
           ),
-          Expanded(
-            child: Focus(
-              focusNode: focusNode,
-              child: TextField(
-                obscureText: obsureText,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: widget.hintText,
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
+          margin: const EdgeInsets.only(bottom: 15),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5),
+            border: Border.all(
+              color: isFocused ? Colors.blue : Colors.transparent,
+              width: 2.0,
+            ),
+          ),
+          child: Row(
+            children: [
+              if (widget.leadingIcon != null)
+                Iconify(
+                  widget.leadingIcon!,
+                  size: 20,
                 ),
-                keyboardType: widget.keyboardType,
-                onChanged: widget.onChange,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Colors.black,
+              const SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: Focus(
+                  focusNode: focusNode,
+                  child: TextField(
+                    obscureText: obsureText,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: widget.hintText,
                     ),
+                    keyboardType: widget.keyboardType,
+                    onChanged: widget.onChange,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Colors.black,
+                        ),
+                  ),
+                ),
               ),
-            ),
+              if (widget.isPassword)
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      obsureText = !obsureText;
+                    });
+                  },
+                  child: Iconify(
+                    obsureText ? Ph.eye_light : Ph.eye_slash,
+                    size: 20,
+                  ),
+                )
+            ],
           ),
-          if (widget.isPassword)
-            InkWell(
-              onTap: () {
-                setState(() {
-                  obsureText = !obsureText;
-                });
-              },
-              child: Iconify(
-                obsureText ? Ph.eye_light : Ph.eye_slash,
-                size: 20,
-              ),
-            )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

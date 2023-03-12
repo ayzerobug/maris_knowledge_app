@@ -21,7 +21,7 @@ class ReferralScreen extends StatelessWidget {
     return AppLayout(
       appBar: AppBar(
         title: const Center(
-          child: Text("Leaderboard"),
+          child: Text("My Referrals"),
         ),
       ),
       padding: EdgeInsets.zero,
