@@ -14,8 +14,8 @@ class FormContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Container(
-        padding: const EdgeInsets.all(30),
-        margin: const EdgeInsets.all(30),
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             begin: Alignment.topCenter,

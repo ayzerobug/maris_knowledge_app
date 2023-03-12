@@ -3,11 +3,14 @@ import 'package:iconify_flutter/icons/ic.dart';
 import 'package:iconify_flutter/icons/mi.dart';
 import 'package:iconify_flutter/icons/ph.dart';
 import 'package:iconify_flutter/icons/uil.dart';
-import 'package:maris_knowledge_app/custom_widgets/input_field.dart';
+import 'package:transparent_route/transparent_route.dart';
 
-import '../../custom_widgets/app_button.dart';
 import '../../custom_widgets/app_layout.dart';
 import '../../custom_widgets/form_container.dart';
+import '../../custom_widgets/green_gradient_container.dart';
+import '../../custom_widgets/input_field.dart';
+import '../user/home_screen.dart';
+import 'login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -73,20 +76,32 @@ class RegisterScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      AppButton(onTap: () {}, text: "Create Account")
+                      GreenGradientContainer(
+                        onTap: () => replaceScreen(context, const HomeScreen()),
+                        child: Text(
+                          "Create Account",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(fontSize: 18),
+                        ),
+                      )
                     ],
                   ),
                 ),
-                RichText(
-                  text: TextSpan(
-                    children: const [
-                      TextSpan(text: 'Already have an account?'),
-                      TextSpan(
-                        text: ' Login',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
-                    style: Theme.of(context).textTheme.bodyMedium,
+                InkWell(
+                  onTap: () => replaceScreen(context, const LoginScreen()),
+                  child: RichText(
+                    text: TextSpan(
+                      children: const [
+                        TextSpan(text: 'Already have an account?'),
+                        TextSpan(
+                          text: ' Login',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                   ),
                 ),
               ],

@@ -15,6 +15,16 @@ import 'package:iconify_flutter/icons/tabler.dart';
 import 'package:iconify_flutter/icons/uil.dart';
 import 'package:maris_knowledge_app/custom_widgets/blue_gradient_container.dart';
 import 'package:maris_knowledge_app/misc/constants.dart';
+import 'package:maris_knowledge_app/screens/auth/login_screen.dart';
+import 'package:maris_knowledge_app/screens/user/leaderboard.dart';
+import 'package:maris_knowledge_app/screens/user/payout_history_screen.dart';
+import 'package:maris_knowledge_app/screens/user/play_screen.dart';
+import 'package:maris_knowledge_app/screens/user/quiz_start_screen.dart';
+import 'package:maris_knowledge_app/screens/user/refer_screen.dart';
+import 'package:maris_knowledge_app/screens/user/referrals_screen.dart';
+import 'package:maris_knowledge_app/screens/user/settings_screen.dart';
+import 'package:maris_knowledge_app/screens/user/withdraw_funds_screen.dart';
+import 'package:transparent_route/transparent_route.dart';
 
 import '../../custom_widgets/app-bg.dart';
 import '../../custom_widgets/app_layout.dart';
@@ -90,20 +100,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const DrawerNav(iconData: Bi.pie_chart, text: "Dashboard"),
-                const DrawerNav(
-                    iconData: AkarIcons.people_group, text: "Referrals"),
-                const DrawerNav(
-                    iconData: Carbon.skill_level, text: "Game Levels"),
-                const DrawerNav(iconData: Ri.stack_line, text: "Leaderboard"),
-                const DrawerNav(
-                    iconData: MaterialSymbols.list_alt_outline,
-                    text: "Billing History"),
-                const DrawerNav(
-                    iconData: Ic.outline_file_upload,
-                    text: "Withdrawal History"),
-                const DrawerNav(iconData: Uil.book_alt, text: "Withdraw Funds"),
-                const DrawerNav(iconData: Carbon.settings, text: "Settings"),
+                DrawerNav(
+                  onTap: () => replaceScreen(context, const HomeScreen()),
+                  iconData: Bi.pie_chart,
+                  text: "Dashboard",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, ReferralScreen()),
+                  iconData: AkarIcons.people_group,
+                  text: "Referrals",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, const PlayScreen()),
+                  iconData: Carbon.skill_level,
+                  text: "Game Levels",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, const LeaderBoard()),
+                  iconData: Ri.stack_line,
+                  text: "Leaderboard",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, PayoutHistoryScreen()),
+                  iconData: MaterialSymbols.list_alt_outline,
+                  text: "Billing History",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, PayoutHistoryScreen()),
+                  iconData: Ic.outline_file_upload,
+                  text: "Withdrawal History",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, const WithdrawFundScreen()),
+                  iconData: Uil.book_alt,
+                  text: "Withdraw Funds",
+                ),
+                DrawerNav(
+                  onTap: () => pushScreen(context, const SettingsScreen()),
+                  iconData: Carbon.settings,
+                  text: "Settings",
+                ),
                 const SizedBox(
                   height: 30,
                 ),
@@ -190,55 +226,57 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 20,
           ),
-          Container(
-            // height: 170,
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: const Color(0xff7B0808),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Level 2",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall!
-                        .copyWith(fontSize: 18)),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Image.asset(
-                    "assets/images/gold-cup-with-star.png",
-                    width: 100,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Iconify(
-                      Ic.twotone_arrow_forward,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Continue Game",
+          InkWell(
+            onTap: () => pushScreen(context, const QuizStartScreen()),
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xff7B0808),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Level 2",
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall!
-                          .copyWith(fontSize: 18),
+                          .copyWith(fontSize: 18)),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Image.asset(
+                      "assets/images/gold-cup-with-star.png",
+                      width: 100,
                     ),
-                  ],
-                )
-              ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Iconify(
+                        Ic.twotone_arrow_forward,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Continue Game",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .copyWith(fontSize: 18),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
           GreenGradientContainer(
-            onTap: () {},
+            onTap: () => pushScreen(context, const ReferScreen()),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(

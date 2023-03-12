@@ -98,7 +98,7 @@ class _LevelProgressState extends State<LevelProgress> {
             height: 20,
           ),
           RedGradientContainer(
-            onTap: () {},
+            onTap: () => Navigator.pop(context),
             child: Padding(
               padding: const EdgeInsets.all(6.0),
               child: Text(

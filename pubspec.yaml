@@ -38,6 +38,7 @@ dependencies:
   iconify_flutter: ^0.0.5
   carousel_slider: ^4.2.1
   outlined_text: ^1.0.1
+  transparent_route: ^0.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/icons/ph.dart';
 import 'package:iconify_flutter/icons/uil.dart';
-import 'package:maris_knowledge_app/custom_widgets/input_field.dart';
+import 'package:transparent_route/transparent_route.dart';
 
-import '../../custom_widgets/app_button.dart';
 import '../../custom_widgets/app_layout.dart';
 import '../../custom_widgets/form_container.dart';
+import '../../custom_widgets/green_gradient_container.dart';
+import '../../custom_widgets/input_field.dart';
+import '../user/home_screen.dart';
+import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -42,23 +45,33 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      AppButton(
-                        onTap: () {},
-                        text: "Login",
+                      GreenGradientContainer(
+                        onTap: () => replaceScreen(context, const HomeScreen()),
+                        child: Text(
+                          "Login",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(fontSize: 18),
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      RichText(
-                        text: TextSpan(
-                          children: const [
-                            TextSpan(text: "Don't have an account"),
-                            TextSpan(
-                              text: ' Sign up',
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          ],
-                          style: Theme.of(context).textTheme.bodyMedium,
+                      InkWell(
+                        onTap: () =>
+                            replaceScreen(context, const RegisterScreen()),
+                        child: RichText(
+                          text: TextSpan(
+                            children: const [
+                              TextSpan(text: "Don't have an account"),
+                              TextSpan(
+                                text: ' Sign up',
+                                style: TextStyle(color: Colors.blue),
+                              ),
+                            ],
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
                         ),
                       ),
                       const SizedBox(

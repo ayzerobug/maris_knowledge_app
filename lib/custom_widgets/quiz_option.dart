@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'blue_gradient_container.dart';
 
 class QuizOption extends StatelessWidget {
-  const QuizOption({super.key, required this.id, required this.value});
+  const QuizOption(
+      {super.key, required this.id, required this.value, required this.onTap});
   final String id;
   final String value;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 18.0),
       child: BlueGradientContainer(
-        onTap: () {},
+        onTap: onTap,
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
         child: Row(
           children: [

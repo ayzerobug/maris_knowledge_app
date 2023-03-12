@@ -5,6 +5,8 @@ import 'package:iconify_flutter/icons/uil.dart';
 import 'package:iconify_flutter/icons/zondicons.dart';
 import 'package:maris_knowledge_app/custom_widgets/app_layout.dart';
 import 'package:maris_knowledge_app/custom_widgets/blue_gradient_container.dart';
+import 'package:maris_knowledge_app/screens/user/level_progress.dart';
+import 'package:transparent_route/transparent_route.dart';
 
 import '../../custom_widgets/outlined_text.dart';
 import '../../custom_widgets/quiz_option.dart';
@@ -89,10 +91,27 @@ class QuizScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const QuizOption(id: "A", value: "Checks and balances"),
-          const QuizOption(id: "C", value: "Checks and standard"),
-          const QuizOption(id: "D", value: "Checks and progress"),
-          const QuizOption(id: "E", value: "Checks and Open"),
+          QuizOption(
+            onTap: () => pushScreen(context, const LevelProgress(progress: 30)),
+            id: "A",
+            value: "Checks and balances",
+          ),
+          QuizOption(
+            onTap: () =>
+                pushScreen(context, const LevelProgress(progress: 100)),
+            id: "C",
+            value: "Checks and standard",
+          ),
+          QuizOption(
+            onTap: () => pushScreen(context, const LevelProgress(progress: 50)),
+            id: "D",
+            value: "Checks and progress",
+          ),
+          QuizOption(
+            onTap: () => pushScreen(context, const LevelProgress(progress: 80)),
+            id: "E",
+            value: "Checks and Open",
+          ),
           const SizedBox(
             height: 20,
           ),

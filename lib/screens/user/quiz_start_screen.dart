@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maris_knowledge_app/screens/user/quiz_screen.dart';
+import 'package:transparent_route/transparent_route.dart';
 
 import '../../custom_widgets/app_layout.dart';
 import '../../custom_widgets/containers/red_gradient_container.dart';
@@ -53,7 +55,9 @@ class _QuizStartScreenState extends State<QuizStartScreen>
           child: Image.asset("assets/images/shield.png"),
         ),
         GreenGradientContainer(
-          onTap: () {},
+          onTap: () {
+            pushScreen(context, const QuizScreen());
+          },
           child: Padding(
             padding: const EdgeInsets.all(6.0),
             child: Text(
@@ -66,7 +70,7 @@ class _QuizStartScreenState extends State<QuizStartScreen>
           height: 30,
         ),
         RedGradientContainer(
-          onTap: () {},
+          onTap: () => Navigator.pop(context),
           child: Padding(
             padding: const EdgeInsets.all(6.0),
             child: Text(
