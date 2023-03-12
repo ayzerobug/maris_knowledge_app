@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maris_knowledge_app/misc/constants.dart';
-import 'package:maris_knowledge_app/screens/user/play_screen.dart';
-
-import 'screens/user/home_screen.dart';
+import 'screens/user/referrals_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +39,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const PlayScreen(),
+      home: ReferralScreen(),
     );
   }
 }

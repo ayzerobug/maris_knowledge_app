@@ -18,75 +18,72 @@ class PlayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppLayout(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            const LevelStat(),
-            SizedBox(
-              height: 400,
+      body: Column(
+        children: [
+          const LevelStat(),
+          SizedBox(
+            height: 400,
+            child: Center(
+              child: Image.asset(AppConstants.logoPath),
+            ),
+          ),
+          GreenGradientContainer(
+            onTap: () {},
+            stretch: false,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: 50,
               child: Center(
-                child: Image.asset(AppConstants.logoPath),
-              ),
-            ),
-            GreenGradientContainer(
-              onTap: () {},
-              stretch: false,
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                height: 50,
-                child: Center(
-                  child: Text(
-                    "PLAY",
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
+                child: Text(
+                  "PLAY",
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
             ),
-            const SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                BlueGradientContainer(
-                  onTap: () {},
-                  padding: const EdgeInsets.all(10),
-                  child: const Iconify(
-                    Carbon.settings,
-                    color: Colors.white,
-                    size: 40,
-                  ),
+          ),
+          const SizedBox(height: 50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              BlueGradientContainer(
+                onTap: () {},
+                padding: const EdgeInsets.all(10),
+                child: const Iconify(
+                  Carbon.settings,
+                  color: Colors.white,
+                  size: 40,
                 ),
-                BlueGradientContainer(
-                  onTap: () {},
-                  padding: const EdgeInsets.all(10),
-                  child: const Iconify(
-                    Ri.stack_line,
-                    color: Colors.white,
-                    size: 40,
-                  ),
+              ),
+              BlueGradientContainer(
+                onTap: () {},
+                padding: const EdgeInsets.all(10),
+                child: const Iconify(
+                  Ri.stack_line,
+                  color: Colors.white,
+                  size: 40,
                 ),
-                BlueGradientContainer(
-                  onTap: () {},
-                  padding: const EdgeInsets.all(10),
-                  child: const Iconify(
-                    MaterialSymbols.text_snippet_outline_rounded,
-                    color: Colors.white,
-                    size: 40,
-                  ),
+              ),
+              BlueGradientContainer(
+                onTap: () {},
+                padding: const EdgeInsets.all(10),
+                child: const Iconify(
+                  MaterialSymbols.text_snippet_outline_rounded,
+                  color: Colors.white,
+                  size: 40,
                 ),
-                BlueGradientContainer(
-                  onTap: () {},
-                  padding: const EdgeInsets.all(10),
-                  child: const Iconify(
-                    Bi.person,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                )
-              ],
-            )
-          ],
-        ),
+              ),
+              BlueGradientContainer(
+                onTap: () {},
+                padding: const EdgeInsets.all(10),
+                child: const Iconify(
+                  Bi.person,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }

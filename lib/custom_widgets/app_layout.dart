@@ -3,9 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppLayout extends StatelessWidget {
-  const AppLayout({super.key, this.appBar, this.body});
+  const AppLayout(
+      {super.key,
+      this.appBar,
+      this.body,
+      this.padding = const EdgeInsets.all(20)});
   final PreferredSizeWidget? appBar;
   final Widget? body;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,12 @@ class AppLayout extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: appBar,
-            body: SafeArea(child: body ?? const SizedBox()),
+            body: SafeArea(
+              child: Padding(
+                padding: padding,
+                child: body ?? const SizedBox(),
+              ),
+            ),
           ),
         ),
       ],
