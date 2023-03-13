@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/bi.dart';
 import 'package:iconify_flutter/icons/carbon.dart';
-import 'package:iconify_flutter/icons/ion.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/ri.dart';
-import 'package:maris_knowledge_app/screens/user/payout_history_screen.dart';
 import 'package:maris_knowledge_app/screens/user/quiz_screen.dart';
 import 'package:transparent_route/transparent_route.dart';
 
@@ -31,7 +29,7 @@ class PlayScreen extends StatelessWidget {
             ),
           ),
           GreenGradientContainer(
-            onTap: () => pushScreen(context, QuizScreen()),
+            onTap: () => pushScreen(context, const QuizScreen()),
             stretch: false,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.5,

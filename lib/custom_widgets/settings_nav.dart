@@ -5,7 +5,8 @@ import 'package:maris_knowledge_app/custom_widgets/blue_gradient_container.dart'
 import 'package:transparent_route/transparent_route.dart';
 
 class SettingsNav extends StatelessWidget {
-  SettingsNav({super.key, required this.text, this.screen = const SizedBox()});
+  const SettingsNav(
+      {super.key, required this.text, this.screen = const SizedBox()});
   final String text;
   final Widget screen;
 

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/majesticons.dart';
-import 'package:iconify_flutter/icons/material_symbols.dart';
+import 'package:transparent_route/transparent_route.dart';
 
 import '../../custom_widgets/app_layout.dart';
-import '../../custom_widgets/blue_gradient_container.dart';
 import '../../custom_widgets/containers/red_gradient_container.dart';
 import '../../custom_widgets/green_gradient_container.dart';
-import '../../custom_widgets/settings_nav.dart';
+import 'referrals_screen.dart';
 
 class ReferScreen extends StatelessWidget {
   const ReferScreen({super.key});
@@ -33,7 +30,7 @@ class ReferScreen extends StatelessWidget {
           height: 50,
         ),
         GreenGradientContainer(
-          onTap: () {},
+          onTap: () => pushScreen(context, ReferralScreen()),
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: Text(

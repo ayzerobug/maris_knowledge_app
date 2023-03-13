@@ -60,7 +60,7 @@ class HistoryItem extends StatelessWidget {
           Text(
             "Status: ${history.isPaid ? 'Paid' : 'Unpaid'}",
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: history.isPaid ? Color(0xff04C300) : Colors.red),
+                color: history.isPaid ? const Color(0xff04C300) : Colors.red),
           )
         ],
       ),

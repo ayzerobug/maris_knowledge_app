@@ -4,36 +4,29 @@ import 'package:iconify_flutter/icons/akar_icons.dart';
 import 'package:iconify_flutter/icons/bi.dart';
 import 'package:iconify_flutter/icons/carbon.dart';
 import 'package:iconify_flutter/icons/fe.dart';
-import 'package:iconify_flutter/icons/heroicons.dart';
 import 'package:iconify_flutter/icons/ic.dart';
-import 'package:iconify_flutter/icons/icon_park_solid.dart';
 import 'package:iconify_flutter/icons/ion.dart';
-import 'package:iconify_flutter/icons/majesticons.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/ri.dart';
 import 'package:iconify_flutter/icons/tabler.dart';
 import 'package:iconify_flutter/icons/uil.dart';
-import 'package:maris_knowledge_app/custom_widgets/blue_gradient_container.dart';
-import 'package:maris_knowledge_app/misc/constants.dart';
-import 'package:maris_knowledge_app/screens/auth/login_screen.dart';
-import 'package:maris_knowledge_app/screens/user/leaderboard.dart';
-import 'package:maris_knowledge_app/screens/user/payout_history_screen.dart';
-import 'package:maris_knowledge_app/screens/user/play_screen.dart';
-import 'package:maris_knowledge_app/screens/user/quiz_start_screen.dart';
-import 'package:maris_knowledge_app/screens/user/refer_screen.dart';
-import 'package:maris_knowledge_app/screens/user/referrals_screen.dart';
-import 'package:maris_knowledge_app/screens/user/settings_screen.dart';
-import 'package:maris_knowledge_app/screens/user/withdraw_funds_screen.dart';
 import 'package:transparent_route/transparent_route.dart';
 
-import '../../custom_widgets/app-bg.dart';
+import '../../custom_widgets/app_bg.dart';
 import '../../custom_widgets/app_layout.dart';
-import '../../custom_widgets/counter.dart';
 import '../../custom_widgets/green_gradient_container.dart';
 import '../../custom_widgets/home_carousel_item.dart';
 import '../../custom_widgets/home_greeetings.dart';
 import '../../custom_widgets/level_stat.dart';
 import '../../custom_widgets/drawer_nav.dart';
+import '../../misc/constants.dart';
+import 'leaderboard.dart';
+import 'payout_history_screen.dart';
+import 'play_screen.dart';
+import 'quiz_start_screen.dart';
+import 'refer_screen.dart';
+import 'settings_screen.dart';
+import 'withdraw_funds_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -106,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: "Dashboard",
                 ),
                 DrawerNav(
-                  onTap: () => pushScreen(context, ReferralScreen()),
+                  onTap: () => pushScreen(context, const ReferScreen()),
                   iconData: AkarIcons.people_group,
                   text: "Referrals",
                 ),

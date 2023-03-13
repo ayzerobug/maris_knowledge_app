@@ -3,7 +3,6 @@ import 'package:maris_knowledge_app/custom_widgets/app_layout.dart';
 import 'package:maris_knowledge_app/models/payout_history_group.dart';
 
 import '../../custom_widgets/history_group.dart';
-import '../../custom_widgets/history_item.dart';
 import '../../models/payout_history.dart';
 
 class PayoutHistoryScreen extends StatelessWidget {

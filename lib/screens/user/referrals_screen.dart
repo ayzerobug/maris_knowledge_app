@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/majesticons.dart';
-import 'package:iconify_flutter/icons/material_symbols.dart';
 
 import '../../custom_widgets/app_layout.dart';
 import '../../custom_widgets/blue_gradient_container.dart';

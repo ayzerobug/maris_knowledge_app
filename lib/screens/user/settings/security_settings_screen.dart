@@ -56,7 +56,7 @@ class SecuritySettingsScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: const Text("Update Password"),
                   ),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   const InputField(
                     label: "Withdrawal PIN",
                     leadingIcon: Ph.lock_bold,
